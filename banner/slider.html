@@ -38,11 +38,11 @@
         }
 
         .carousel.vertical .item {
-            -webkit-transition: 2.6s ease-in-out top;
-            -moz-transition: 2.6s ease-in-out top;
-            -ms-transition: 2.6s ease-in-out top;
-            -o-transition: 2.6s ease-in-out top;
-            transition: 2.6s ease-in-out top;
+            -webkit-transition: 10.6s ease-in-out top;
+            -moz-transition: 10.6s ease-in-out top;
+            -ms-transition: 10.6s ease-in-out top;
+            -o-transition: 10.6s ease-in-out top;
+            transition: 10.6s ease-in-out top;
         }
 
         .carousel.vertical .active {
@@ -74,12 +74,32 @@
             left: 0;
         }
     </style>
+    <script>
+        $(function () {
+            $('#myCarousel').carousel({
+                interval: 10000,
+                pause: "false"
+            });
+            $('#slowButton').click(function () {
+                c = $('#homeCarousel')
+                opt = c.data()['bs.carousel'].options
+                opt.interval = 10000;
+                c.data({ options: opt })
+            });
+            $('#fastButton').click(function () {
+                c = $('#homeCarousel')
+                opt = c.data()['bs.carousel'].options
+                opt.interval = 1000;
+                c.data({ options: opt })
+            });
+        });
+    </script>
 </head>
 
 <body>
     <!--end of header-->
     <div class="content">
-        <div id="myCarousel" class="carousel slide vertical" data-ride="carousel" data-interval="9000">
+        <div id="myCarousel" class="carousel slide vertical" data-ride="carousel">
             <ol class="carousel-indicators">
                 <!-- <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                 <li data-target="#myCarousel" data-slide-to="1"></li>

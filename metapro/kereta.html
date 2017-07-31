@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="vendor/bootflat/css/bootflat.min.css">
+    <link type="text/css" rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="vendor/angular/angular.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="index.css">
+
+    <!--Import jQuery before materialize.js-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--Let browser know website is optimized for mobile-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h2>ONE WAY</h2>
+        <hr>
+        <form>
+            <div class="form-group">
+                <label for="sel1">From:</label>
+                <select class="form-control input-lg" id="sel1">
+                    <option>Bandung</option>
+                    <option>Jakarta</option>
+                    <option>Surabaya</option>
+                    <option>Malang</option>
+                </select>
+            </div>
+             <div class="form-group">
+                <label for="sel1">To:</label>
+                <select class="form-control input-lg" id="sel1">
+                    <option>Bandung</option>
+                    <option>Jakarta</option>
+                    <option>Surabaya</option>
+                    <option>Malang</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="usr">Date From:</label>
+                <input type="date" class="form-control input-lg" id="usr">
+            </div>
+            <div class="form-group">
+                <label for="usr">Date To:</label>
+                <input type="date" class="form-control input-lg" id="usr">
+            </div>
+            <div class="form-group">
+                <label for="sel1">Class:</label>
+                <select class="form-control input-lg" id="sel1">
+                    <option>Economy</option>
+                    <option>Premium Economy</option>
+                    <option>Business</option>
+                    <option>First Class</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="sel1">Adult:(12+yrs)</label>
+                <select class="form-control input-lg" id="sel1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                </select>
+            </div>
+              <div class="form-group">
+                <label for="sel1">Adult:(2-11yrs)</label>
+                <select class="form-control input-lg" id="sel1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-danger btn-block btn-lg" data-toggle="modal" data-target="#myModal">SEND</button>
+            </div>
+        </form>
+    </div>
+</body>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+                <h4 class="modal-title">Info</h4>
+            </div>
+            <div class="modal-body">
+                <p>Pesana hotel anda sedang diproses</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-block" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</html>

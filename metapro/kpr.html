@@ -20,7 +20,7 @@
 
 <body ng-app="">
     <div class="container-fluid">
-        <h2>Voucher Game Online</h2>
+        <h2>Simulasi KPR</h2>
         <hr>
         <form>
             <div class="form-group">
@@ -54,7 +54,7 @@
 </body>
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog modal-sm">
+    <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
@@ -66,8 +66,14 @@
                     <tbody>
                         <tr>
                             <td>Harag Rumah : {{harga}}</td>
+                        </tr>
+                        <tr>
                             <td>Uang Muka : {{harga/dp}}</td>
+                        </tr>
+                        <tr>
                             <td>Tenor : {{tenor/12}}</td>
+                        </tr>
+                        <tr>
                             <td>Bunga : {{bunga}}</td>
                         </tr>
                     </tbody>

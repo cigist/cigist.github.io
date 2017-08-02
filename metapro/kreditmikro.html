@@ -69,13 +69,13 @@
                             <td>Penghasilan Bersih (/bln) : {{penghasilan}}</td>
                         </tr>
                         <tr>
-                            <td>Baki Kredit : {{baki}}</td>
+                            <td>Baki Kredit : {{(penghasilan*baki)/100}}</td>
                         </tr>
                         <tr>
                             <td>Total Angsuran pinjaman lain (/bln) : {{pinjaman}}</td>
                         </tr>
                         <tr>
-                            <td>Bunga KTA : {{bunga}} /bln ({{bunga*12}} /tahun</td>
+                            <td>Bunga KTA : {{bunga}} %/bln ({{bunga*12}} %/tahun</td>
                         </tr>
                     </tbody>
                 </table>

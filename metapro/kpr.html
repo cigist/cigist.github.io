@@ -29,10 +29,10 @@
             </div>
             <p>Rp = {{harga}}</p>
             <div class="form-group">
-                <label for="nama">Tenor (Tahun)</label>
+                <label for="nama">Tenor (/tahun)</label>
                 <input type="text" class="form-control" id="" ng-model="tenor">
             </div>
-            <p>Bulan = {{tenor/12}}</p>
+            <p>Bulan = {{tenor*12}}</p>
             <div class="form-group">
                 <label for="nama">Bunga Pinjaman (%/thn)</label>
                 <input type="text" class="form-control" id="" ng-model="bunga">
@@ -41,7 +41,7 @@
                 <label for="nama">Uang Muka (Dp)</label>
                 <input type="text" class="form-control" id="" ng-model="dp">
             </div>
-            <p>Rp = {{(harga/dp)}}</p>
+            <p>Dp (%) = {{(harga/dp)*100}}</p>
             <div class="form-group">
                 <label for="nama">Perhitungan Bunga: <b>Anuitas</b></label>
                 <!-- <input type="text" class="form-control" id="" ng-model="bunga"> -->

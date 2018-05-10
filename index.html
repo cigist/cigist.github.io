@@ -1,48 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--
+Hosung Hwang
+From various sources
+
+Setting URL Scheme
+iOS :
+http://www.idev101.com/code/Objective-C/custom_url_schemes.html
+
+Android :
+<activity android:name="MyApp" android:label="@string/app_name" 
+          android:screenOrientation="portrait"
+          android:launchMode="singleTop"
+          android:configChanges="orientation|keyboardHidden">
+
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+
+    <intent-filter>
+      <data android:scheme="myprotocol" />
+      <action android:name="android.intent.action.VIEW" />
+      <category android:name="android.intent.category.BROWSABLE" />
+      <category android:name="android.intent.category.DEFAULT" />
+    </intent-filter>
+</activity>
+-->
+<html>
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<meta charset="utf-8">
+
+<script type="text/javascript">
+		// Market address for android and iphone
+		var market_a = "market://details?id=com.telkomsel.telkomselcm&hl=in";
+		var market_i = "https://itunes.apple.com/id/app/mytelkomsel/id651412430?l=id&mt=8";
+
+		var IS_IPAD = navigator.userAgent.match(/iPad/i) != null,
+			IS_IPHONE = !IS_IPAD && ((navigator.userAgent.match(/iPhone/i) != null) || (navigator.userAgent.match(/iPod/i) != null)),
+			IS_IOS = IS_IPAD || IS_IPHONE,
+			IS_ANDROID = !IS_IOS && navigator.userAgent.match(/android/i) != null,
+			IS_MOBILE = IS_IOS || IS_ANDROID;
+
+		function checkAppInstall() {
+			//schema of the app
+            var url = "MyTelkomsel://";
+			
+			if(IS_ANDROID) {
+				setTimeout( function() {
+					location.href=market_a;
+				}, 1000);
+		 
+                location.href = url;
+			} else if(IS_IOS) {
+				setTimeout( function() {
+					location.href=market_i;
+				}, 1000);
+		 
+                location.href = url;
+			} else {
+				setTimeout( function() {
+					location.href=market_a;
+				}, 1000);
+		 
+                location.href = url;
+			}
+		 
+			return false;
+		}
+		 
+		// open market
+		function goMarket() {
+			if(IS_ANDROID) {
+				location.href=market_a;
+			} else if(IS_IOS) {
+				location.href=market_i;
+			} else {
+				// do nothing
+			}
+		}
+	</script>
 </head>
+
 <body>
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">cigist</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Page 1-1</a></li>
-            <li><a href="#">Page 1-2</a></li>
-            <li><a href="#">Page 1-3</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-  
-<div class="container">
-  <h3>Collapsible Navbar</h3>
-  <p>In this example, the navigation bar is hidden on small screens and replaced by a button in the top right corner (try to re-size this window).
-  <p>Only when the button is clicked, the navigation bar will be displayed.</p>
-</div>
-
-</body>
+	<button onclick="checkAppInstall()">Check App Install</button><br>
+ 
+	<div id="invisible_div" style="display:none;"></div>
+	<div id="display"> </div>
+</body>  
 </html>

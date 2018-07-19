@@ -1,63 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-
+<meta http-equiv="refresh" content="0; URL='https://cigist.wordpress.com/'" />
 <script type="text/javascript">
-		// Market address for android and iphone
-		var market_a = "market://details?id=com.telkomsel.telkomselcm&hl=in";
-		var market_i = "https://itunes.apple.com/id/app/mytelkomsel/id651412430?l=id&mt=8";
-
-		var IS_IPAD = navigator.userAgent.match(/iPad/i) != null,
-			IS_IPHONE = !IS_IPAD && ((navigator.userAgent.match(/iPhone/i) != null) || (navigator.userAgent.match(/iPod/i) != null)),
-			IS_IOS = IS_IPAD || IS_IPHONE,
-			IS_ANDROID = !IS_IOS && navigator.userAgent.match(/android/i) != null,
-			IS_MOBILE = IS_IOS || IS_ANDROID;
-
-		function checkAppInstall() {
-			//schema of the app
-            var url = "MyTelkomsel://";
-			
-			if(IS_ANDROID) {
-				setTimeout( function() {
-					location.href=market_a;
-				}, 1000);
-		 
-                location.href = url;
-			} else if(IS_IOS) {
-				setTimeout( function() {
-					location.href=market_i;
-				}, 1000);
-		 
-                location.href = url;
-			} else {
-				setTimeout( function() {
-					location.href=market_a;
-				}, 1000);
-		 
-                location.href = url;
-			}
-		 
-			return false;
-		}
-		 
-		// open market
-		function goMarket() {
-			if(IS_ANDROID) {
-				location.href=market_a;
-			} else if(IS_IOS) {
-				location.href=market_i;
-			} else {
-				// do nothing
-			}
-		}
 	</script>
 </head>
-
 <body>
-	<button onclick="checkAppInstall()">Check App Install</button><br>
- 
-	<div id="invisible_div" style="display:none;"></div>
-	<div id="display"> </div>
 </body>  
 </html>
